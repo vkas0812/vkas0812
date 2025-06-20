@@ -1,0 +1,5 @@
+pandas
+numpy==1.23.5
+scikit-learn
+pmdarima==2.0.3
+tensorflow==2.12.0
