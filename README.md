@@ -1,10 +1,25 @@
-- 👋 Hi, I’m @vkas0812
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+# Hybrid ARIMA + LSTM Forecasting
 
-<!---
-vkas0812/vkas0812 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+This repository contains a minimal example for building a hybrid forecasting
+model.  A standard ARIMA model is first fitted to the data to capture linear
+trends and seasonality.  An LSTM network is then trained on the resulting
+residuals to learn any remaining non-linear structure.  The combination is
+used for multi-step forecasting.
+
+## Installation
+
+Create a virtual environment (optional) and install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Prepare a dataset with columns `date` and `qty` in CSV or Excel format and run:
+
+```bash
+python train_hybrid.py path/to/your/data.csv
+```
+
+The script prints the MAE and RMSE of the hybrid forecast on a holdout set.
